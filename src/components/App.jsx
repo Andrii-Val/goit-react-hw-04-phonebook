@@ -2,6 +2,7 @@
 import {AddContac} from "./contactForm/ContactForm";
 import{ContactList} from './contactList/ContactList'
 import { Filter } from "./filter/Filter";
+import { nanoid } from 'nanoid';
 import { useEffect, useState } from 'react';
 
 export const App = () => {
@@ -53,7 +54,7 @@ const actualContacts = contacts.filter(contact => contact.name.toLowerCase().inc
     
       <AddContac create={createContact} />
       <div>
-        <Filter onFilter={changeFilter} initValue={state.filter}/>
+        <Filter onFilter={changeFilter} initValue={filters}/>
         <ContactList actual={actualContacts} onDelete={handleDelete}/>
       </div>
     </>
